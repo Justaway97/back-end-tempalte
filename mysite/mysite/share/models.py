@@ -43,14 +43,25 @@ class BaseModel(models.Model):
         self.save()
 
 class BaseCode(BaseModel):
+    class Meta:
+        abstract = True
+
+    app = models.CharField(max_length=200)
     code_description = models.CharField(max_length=200)
     code_type = models.CharField(max_length=200, blank=True, null=True)
     code = models.CharField(max_length=200, blank=True, null=True)
 
 class BaseRole(BaseModel):
+    class Meta:
+        abstract = True
+
+    app = models.CharField(max_length=200)
     role_description = models.CharField(max_length=200)
     role_type = models.CharField(max_length=200, blank=True, null=True)
     role = models.CharField(max_length=200, blank=True, null=True)
 
-class User(AbstractUser):
+class User(BaseModel):
+    class Meta:
+        abstract = True
+    username = models.CharField(max_length=200)
     role_type = models.CharField(max_length=200, blank=True, null=True)

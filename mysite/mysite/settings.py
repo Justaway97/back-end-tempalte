@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'base.apps.BaseConfig',
+    'leave.apps.LeaveConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -117,7 +118,7 @@ TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
-USE_TZ = True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)

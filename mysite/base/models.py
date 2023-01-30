@@ -1,5 +1,5 @@
 from django.db import models
-from base.share.models import BaseModel
+from mysite.share.models import BaseCode, BaseModel, BaseRole, User
 # Create your models here.
 
 # if not able to generate table can follow here https://www.pythonanywhere.com/forums/topic/15000/
@@ -28,3 +28,12 @@ class TestTable(BaseModel):
     date_picker = models.DateTimeField(null=True, blank=True)
     position = models.IntegerField(null=True, blank=True)
     symbol = models.CharField(max_length=200, blank=True, null=True)
+
+class BaseCode(BaseCode):
+    pass
+
+class BaseRole(BaseRole):
+    pass
+
+class BaseUser(User):
+    pass
